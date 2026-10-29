@@ -1,0 +1,18 @@
+/* ===== performance: no heavy filters / blend modes / blur animations ===== */
+/* hero video: plain fade instead of blur+brightness animation */
+.hero-media.hud-pre .hero-video{filter:none !important;transform:none !important;opacity:.55;}
+.hero-media.hud-on .hero-video{animation:heroFadeIn .9s ease both !important;filter:none !important;}
+@keyframes heroFadeIn{from{opacity:.55;}to{opacity:1;}}
+/* camera HUD: no mix-blend scanlines */
+.hud::after{display:none !important;}
+/* loader: no drop-shadow / blur filters, no extra sweeps */
+.holo .mline,.holo .mdot,.holo .mfill,.holo .hs-lock .c,.holo .hs-logo,.holo .hs-box{filter:none !important;box-shadow:none !important;}
+.holo .mreg{display:none !important;}
+.holo .holo-scan,.holo .holo-grid{display:none !important;}
+.holo .mline{stroke-width:2.6;}
+.holo-mapsvg .mz{will-change:transform,opacity;}
+/* cursor logos: no filters, cheap transforms */
+.cursor-logo{filter:none !important;will-change:transform,opacity;transition:opacity .25s ease,scale .2s ease !important;}
+.cursor-logo.hot{filter:none !important;opacity:1;}
+/* service photo grid: static, no animation */
+.service-img::before{transition:none !important;}

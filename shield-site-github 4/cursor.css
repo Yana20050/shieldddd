@@ -1,0 +1,11 @@
+/* cursor trail: three SHIELD emblems, big -> small; they light up over clickable things */
+.cursor-logo{
+  position:fixed;left:0;top:0;z-index:99998;pointer-events:none;
+  background:url('media/emblem.png') center/contain no-repeat;
+  filter:drop-shadow(0 0 8px rgba(77,127,255,.7));
+  transition:opacity .35s ease,filter .25s ease,scale .25s ease;
+}
+.cursor-logo.hot{filter:brightness(1.7) drop-shadow(0 0 14px rgba(120,180,255,1)) drop-shadow(0 0 28px rgba(77,127,255,.9));scale:1.35;}
+@media (hover:none),(max-width:768px){.cursor-logo{display:none;}}
+@media (prefers-reduced-motion:reduce){.cursor-logo{display:none;}}
+.cursor-logo.scrolling{opacity:0 !important;transition:opacity .12s ease;}
